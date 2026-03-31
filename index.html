@@ -3,108 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>宠物健康科研情报站 | 专家下基层项目</title>
+    <title>宠物健康科研情报站 | 互动版</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        body { background: #f0f4f8; }
-        .glass-header { background: rgba(37, 99, 235, 0.9); backdrop-filter: blur(10px); }
-        .hero-gradient { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); }
-        .research-card { border-radius: 20px; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.3); }
-        .research-card:hover { transform: translateY(-8px); shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .research-content { display: none; }
+        .research-card.active .research-content { display: block; }
+        .research-card.active .arrow-icon { transform: rotate(180deg); }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="bg-slate-50 text-slate-900">
 
-    <header class="glass-header text-white sticky top-0 z-50 shadow-md">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fas fa-microscope text-2xl"></i>
-                <span class="font-extrabold text-xl tracking-tight">PET-SCIENCE</span>
-            </div>
-            <span class="bg-blue-500 px-3 py-1 rounded-full text-xs font-bold animate-pulse">科研实时更新</span>
-        </div>
+    <header class="bg-blue-700 text-white p-6 shadow-xl">
+        <h1 class="text-2xl font-bold text-center">🐾 宠物科研动态每日报</h1>
+        <p class="text-center text-blue-200 text-xs mt-2">专家下基层项目核心成果库</p>
     </header>
 
-    <section class="hero-gradient text-white pt-10 pb-20 px-6 text-center">
-        <div class="max-w-2xl mx-auto">
-            <h1 class="text-3xl font-bold mb-4">宠物健康前沿研究库</h1>
-            <p class="text-blue-100 opacity-90 text-sm">由“专家下基层”项目组提供学术支持，助力宠物行业科学转型</p>
+    <main class="p-4 space-y-4">
+        <div class="research-card bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" onclick="this.classList.toggle('active')">
+            <div class="p-5 flex justify-between items-center bg-green-50">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-apple-alt text-green-600"></i>
+                    <span class="font-bold">【消化】益生元对软便的干预</span>
+                </div>
+                <i class="fas fa-chevron-down arrow-icon transition-transform text-slate-400"></i>
+            </div>
+            <div class="research-content p-5 border-t border-slate-100 bg-white">
+                <p class="text-sm leading-relaxed text-slate-600">
+                    <b>科研发现：</b>根据2026年最新临床测试，添加5%果寡糖（FOS）的犬粮可有效增加肠道双歧杆菌数量。<br><br>
+                    <b>专家建议：</b>对于换季易拉稀的宠物，建议连续补充14天高浓度益生元。
+                </p>
+                <a href="#" class="mt-4 inline-block text-blue-600 text-xs font-bold">阅读英文原文献 →</a>
+            </div>
         </div>
-    </section>
 
-    <main class="container mx-auto px-4 -mt-12">
-        
-        <div class="bg-white rounded-3xl p-6 shadow-xl mb-8 flex items-start space-x-4 border-l-8 border-yellow-400">
-            <div class="bg-yellow-100 p-3 rounded-2xl">
-                <i class="fas fa-user-md text-yellow-600 text-xl"></i>
+        <div class="research-card bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" onclick="this.classList.toggle('active')">
+            <div class="p-5 flex justify-between items-center bg-orange-50">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-sparkles text-orange-600"></i>
+                    <span class="font-bold">【毛发】磷虾油与毛发韧度</span>
+                </div>
+                <i class="fas fa-chevron-down arrow-icon transition-transform text-slate-400"></i>
             </div>
-            <div>
-                <h3 class="font-bold text-gray-900">本周专家核心结论</h3>
-                <p class="text-gray-600 text-sm mt-1 leading-relaxed">“近期研究表明，针对老年犬的肠道微生态调节，益生元与后生元的协同作用优于单一补充。”</p>
+            <div class="research-content p-5 border-t border-slate-100 bg-white">
+                <p class="text-sm leading-relaxed text-slate-600">
+                    <b>科研发现：</b>磷虾油中磷脂型Omega-3的吸收率比普通鱼油高出30%，能显著改善皮肤干燥。<br><br>
+                    <b>专家建议：</b>长期掉毛严重的猫，可配合卵磷脂与磷虾油进行“内调外养”。
+                </p>
+                <a href="#" class="mt-4 inline-block text-blue-600 text-xs font-bold">查看实验对比图 →</a>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            <div class="research-card bg-white p-6 shadow-sm">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-stomach text-green-600 text-xl"></i>
-                    </div>
-                    <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">消化 & 吸收</span>
+        <div class="research-card bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" onclick="this.classList.toggle('active')">
+            <div class="p-5 flex justify-between items-center bg-purple-50">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-shield-alt text-purple-600"></i>
+                    <span class="font-bold">【免疫】乳铁蛋白的抗病毒作用</span>
                 </div>
-                <h4 class="font-bold text-lg mb-3">高纤维饮食对肠黏膜修复的影响</h4>
-                <p class="text-gray-500 text-xs mb-4">来源于《Journal of Animal Science》最新综述...</p>
-                <div class="flex items-center text-blue-600 text-sm font-bold">
-                    <span>查看解读内容</span>
-                    <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                </div>
+                <i class="fas fa-chevron-down arrow-icon transition-transform text-slate-400"></i>
             </div>
-
-            <div class="research-card bg-white p-6 shadow-sm">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-paw text-orange-600 text-xl"></i>
-                    </div>
-                    <span class="text-xs font-bold text-orange-600 bg-orange-50 px-2 py-1 rounded">皮肤 & 被毛</span>
-                </div>
-                <h4 class="font-bold text-lg mb-3">南极磷虾油提升被毛光泽度实验</h4>
-                <p class="text-gray-500 text-xs mb-4">临床数据显示：连续食用28天被毛韧度提升15%...</p>
-                <div class="flex items-center text-blue-600 text-sm font-bold">
-                    <span>查看解读内容</span>
-                    <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                </div>
+            <div class="research-content p-5 border-t border-slate-100 bg-white">
+                <p class="text-sm leading-relaxed text-slate-600">
+                    <b>科研发现：</b>乳铁蛋白对幼宠呼吸道感染有显著预防效果，能激发原有的免疫应答。<br><br>
+                    <b>专家建议：</b>断奶期的幼犬猫建议额外添加小剂量乳铁蛋白以平稳过渡。
+                </p>
+                <a href="#" class="mt-4 inline-block text-blue-600 text-xs font-bold">查看专家访谈视频 →</a>
             </div>
-
-            <div class="research-card bg-white p-6 shadow-sm">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-shield-virus text-purple-600 text-xl"></i>
-                    </div>
-                    <span class="text-xs font-bold text-purple-600 bg-purple-50 px-2 py-1 rounded">免疫 & 防御</span>
-                </div>
-                <h4 class="font-bold text-lg mb-3">天然植物多糖对幼宠疫苗免疫增强</h4>
-                <p class="text-gray-500 text-xs mb-4">研究验证了特定多糖对中和抗体水平的提升作用...</p>
-                <div class="flex items-center text-blue-600 text-sm font-bold">
-                    <span>查看解读内容</span>
-                    <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                </div>
-            </div>
-
         </div>
     </main>
 
-    <footer class="mt-12 py-8 bg-gray-900 text-gray-500 text-center text-xs">
-        <div class="flex justify-center space-x-4 mb-4">
-            <span>科研合作</span>
-            <span>|</span>
-            <span>专家录入</span>
-            <span>|</span>
-            <span>项目白皮书</span>
-        </div>
-        <p>© 2026 专家下基层科研组联合研发</p>
-        <p class="mt-2 text-gray-700 underline">数据仅供科研参考，医疗请遵医嘱</p>
+    <footer class="p-8 text-center text-slate-400 text-xs">
+        点按卡片查看详细解读
     </footer>
 
 </body>
