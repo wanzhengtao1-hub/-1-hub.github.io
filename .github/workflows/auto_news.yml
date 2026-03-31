@@ -1,0 +1,24 @@
+name: 宠物新闻自动更新
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天凌晨自动跑
+  workflow_dispatch: # 方便你手动点一下就跑
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: 更新内容
+        run: |
+          DATE=$(date +%Y-%m-%d)
+          sed -i "s/【消化】.*/【消化】$DATE 肠道微生态最新研究进展/g" index.html
+          sed -i "s/【毛发】.*/【毛发】$DATE 皮毛营养吸收实验结论/g" index.html
+          sed -i "s/【免疫】.*/【免疫】$DATE 提升幼宠免疫力的新型方案/g" index.html
+      - name: 提交并推送到网站
+        run: |
+          git config --global user.name 'NewsBot'
+          git config --global user.email 'bot@github.com'
+          git add index.html
+          git commit -m "机器人自动更新: $DATE"
+          git push
