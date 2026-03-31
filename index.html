@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宠物健康科研每日报 - 专家下基层项目</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .pet-card { transition: transform 0.3s; }
+        .pet-card:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <nav class="bg-blue-600 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">🐾 宠物健康科研动态</h1>
+            <div class="space-x-4">
+                <a href="#digestion" class="hover:underline">消化系统</a>
+                <a href="#fur" class="hover:underline">毛发管理</a>
+                <a href="#immunity" class="hover:underline">免疫力</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto my-8 p-4">
+        
+        <section class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
+            <h2 class="font-bold text-lg text-yellow-800">💡 专家今日建议</h2>
+            <p class="text-yellow-700">“春季换季，宠主应增加优质蛋白摄入，并配合 Omega-3 补充以应对季节性掉毛。” —— 专家组</p>
+        </section>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <section id="digestion" class="pet-card bg-white p-6 rounded-xl shadow-md border-t-4 border-green-500">
+                <h3 class="text-xl font-bold text-green-600 mb-4">🩺 消化与肠道</h3>
+                <div class="space-y-4">
+                    <article>
+                        <span class="text-xs text-gray-400">2026-04-01</span>
+                        <h4 class="font-semibold hover:text-blue-600 cursor-pointer">最新研究：益生菌对老年犬肠道吸收率的影响</h4>
+                    </article>
+                    <hr>
+                    </div>
+            </section>
+
+            <section id="fur" class="pet-card bg-white p-6 rounded-xl shadow-md border-t-4 border-orange-500">
+                <h3 class="text-xl font-bold text-orange-600 mb-4">✨ 毛发与皮肤</h3>
+                <div class="space-y-4">
+                    <article>
+                        <span class="text-xs text-gray-400">2026-04-01</span>
+                        <h4 class="font-semibold hover:text-blue-600 cursor-pointer">磷虾油在改善猫皮肤干燥中的临床表现</h4>
+                    </article>
+                </div>
+            </section>
+
+            <section id="immunity" class="pet-card bg-white p-6 rounded-xl shadow-md border-t-4 border-purple-500">
+                <h3 class="text-xl font-bold text-purple-600 mb-4">🛡️ 免疫力提升</h3>
+                <div class="space-y-4">
+                    <article>
+                        <span class="text-xs text-gray-400">2026-04-01</span>
+                        <h4 class="font-semibold hover:text-blue-600 cursor-pointer">β-葡聚糖对增强幼犬抵抗力的最新发现</h4>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="text-center p-8 text-gray-500">
+        <p>© 2026 专家下基层 x 宠物公司 联合出品</p>
+    </footer>
+
+</body>
+</html>
