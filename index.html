@@ -3,78 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>宠物健康科研情报站 | 互动版</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>宠物专家组 | 数字化情报中心</title>
     <style>
-        .research-content { display: none; }
-        .research-card.active .research-content { display: block; }
-        .research-card.active .arrow-icon { transform: rotate(180deg); }
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f4f7f6;
+        }
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .container {
+            max-width: 900px;
+            margin: -30px auto 40px;
+            padding: 0 20px;
+        }
+        /* 高清封面图区域 */
+        .featured-image {
+            width: 100%;
+            height: 300px;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            background-color: #ddd;
+            margin-bottom: 30px;
+        }
+        .news-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        .news-item {
+            border-bottom: 1px dashed #eee;
+            padding: 20px 0;
+            transition: all 0.3s;
+        }
+        .news-item:last-child { border: none; }
+        .news-item:hover { background-color: #fafafa; }
+        
+        .news-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            background: #e1f5fe;
+            color: #0288d1;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .news-content {
+            font-size: 1.05rem;
+            color: #444;
+            margin: 0;
+            text-align: justify;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body>
 
-    <header class="bg-blue-700 text-white p-6 shadow-xl">
-        <h1 class="text-2xl font-bold text-center">🐾 宠物科研动态每日报</h1>
-        <p class="text-center text-blue-200 text-xs mt-2">专家下基层项目核心成果库</p>
-    </header>
+<header>
+    <h1>宠物专家组数字化情报站</h1>
+    <p>实时同步全球宠物医疗与营养科研前沿</p>
+</header>
 
-    <main class="p-4 space-y-4">
-        <div class="research-card bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" onclick="this.classList.toggle('active')">
-            <div class="p-5 flex justify-between items-center bg-green-50">
-                <div class="flex items-center space-x-3">
-                    <i class="fas fa-apple-alt text-green-600"></i>
-                    <span class="font-bold">【消化】2026-03-31 肠道微生态最新研究进展
-                </div>
-                <i class="fas fa-chevron-down arrow-icon transition-transform text-slate-400"></i>
-            </div>
-            <div class="research-content p-5 border-t border-slate-100 bg-white">
-                <p class="text-sm leading-relaxed text-slate-600">
-                    <b>科研发现：</b>根据2026年最新临床测试，添加5%果寡糖（FOS）的犬粮可有效增加肠道双歧杆菌数量。<br><br>
-                    <b>专家建议：</b>对于换季易拉稀的宠物，建议连续补充14天高浓度益生元。
-                </p>
-                <a href="#" class="mt-4 inline-block text-blue-600 text-xs font-bold">阅读英文原文献 →</a>
-            </div>
+<div class="container">
+    <img src="https://images.unsplash.com/photo-1581594658553-3594248943e8" alt="科研封面" class="featured-image">
+
+    <div class="news-section">
+        <h2>今日科研动态发布</h2>
+        
+        <div class="news-item">
+            <span class="news-tag">消化健康</span>
+            <p class="news-content">【消化】正在通过云端机器人抓取最新全球肠道微生态研究进展，请稍后刷新...</p>
         </div>
 
-        <div class="research-card bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" onclick="this.classList.toggle('active')">
-            <div class="p-5 flex justify-between items-center bg-orange-50">
-                <div class="flex items-center space-x-3">
-                    <i class="fas fa-sparkles text-orange-600"></i>
-                    <span class="font-bold">【毛发】2026-03-31 皮毛营养吸收实验结论
-                </div>
-                <i class="fas fa-chevron-down arrow-icon transition-transform text-slate-400"></i>
-            </div>
-            <div class="research-content p-5 border-t border-slate-100 bg-white">
-                <p class="text-sm leading-relaxed text-slate-600">
-                    <b>科研发现：</b>磷虾油中磷脂型Omega-3的吸收率比普通鱼油高出30%，能显著改善皮肤干燥。<br><br>
-                    <b>专家建议：</b>长期掉毛严重的猫，可配合卵磷脂与磷虾油进行“内调外养”。
-                </p>
-                <a href="#" class="mt-4 inline-block text-blue-600 text-xs font-bold">查看实验对比图 →</a>
-            </div>
+        <div class="news-item">
+            <span class="news-tag">皮毛营养</span>
+            <p class="news-content">【毛发】正在实时监测国际宠物营养学会关于皮肤屏障修复的实验结论...</p>
         </div>
 
-        <div class="research-card bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" onclick="this.classList.toggle('active')">
-            <div class="p-5 flex justify-between items-center bg-purple-50">
-                <div class="flex items-center space-x-3">
-                    <i class="fas fa-shield-alt text-purple-600"></i>
-                    <span class="font-bold">【免疫】2026-03-31 提升幼宠免疫力的新型方案
-                </div>
-                <i class="fas fa-chevron-down arrow-icon transition-transform text-slate-400"></i>
-            </div>
-            <div class="research-content p-5 border-t border-slate-100 bg-white">
-                <p class="text-sm leading-relaxed text-slate-600">
-                    <b>科研发现：</b>乳铁蛋白对幼宠呼吸道感染有显著预防效果，能激发原有的免疫应答。<br><br>
-                    <b>专家建议：</b>断奶期的幼犬猫建议额外添加小剂量乳铁蛋白以平稳过渡。
-                </p>
-                <a href="#" class="mt-4 inline-block text-blue-600 text-xs font-bold">查看专家访谈视频 →</a>
-            </div>
+        <div class="news-item">
+            <span class="news-tag">免疫防御</span>
+            <p class="news-content">【免疫】正在同步数字化疫苗与免疫力增强方案的最前沿临床数据...</p>
         </div>
-    </main>
+    </div>
+</div>
 
-    <footer class="p-8 text-center text-slate-400 text-xs">
-        点按卡片查看详细解读
-    </footer>
+<footer>
+    <p>© 2026 宠物专家项目组 · 数字化中心自动化分发系统</p>
+</footer>
 
 </body>
 </html>
