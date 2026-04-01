@@ -1,35 +1,26 @@
-name: 宠物新闻深度更新
+name: 真实爬虫更新
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 2 * * *'
   workflow_dispatch:
 
 jobs:
-  update-news:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: 抓取真实宠物动态
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: 安装必要插件
+        run: pip install requests
+      - name: 执行真实抓取
+        run: python crawl.py
+      - name: 提交并推送到网站
         run: |
-          # 这里模拟接入了一个实时数据流
-          DATE=$(date +%Y-%m-%d)
-          
-          # 1. 增加字数：替换成带摘要的真实感新闻
-          NEWS_1="【消化】$DATE 国际宠粮峰会发布肠道微生态调节新标准，旨在通过益生元组合提升中老年犬猫吸收率。"
-          NEWS_2="【毛发】$DATE 宠物营养学会最新研究表明，高浓度Ω-3脂肪酸在改善博美等品种皮肤干燥方面有显著疗效。"
-          NEWS_3="【免疫】$DATE 新型宠物疫苗辅助佐剂进入临床阶段，有望将幼宠初免成功率提升15%以上。"
-          
-          sed -i "s/【消化】.*/$NEWS_1/g" index.html
-          sed -i "s/【毛发】.*/$NEWS_2/g" index.html
-          sed -i "s/【免疫】.*/$NEWS_3/g" index.html
-          
-          # 2. 增加图片：随机更换高清科研风配图（来自免费公共图库）
-          sed -i "s|https://images.unsplash.com/photo-1581594658553-3594248943e8|https://source.unsplash.com/featured/?pet,lab,$(date +%s)|g" index.html
-
-      - name: 提交更新
-        run: |
-          git config --global user.name 'NewsBot'
+          git config --global user.name 'Real-News-Bot'
           git config --global user.email 'bot@github.com'
-          git add index.html
-          git commit -m "深度内容更新: $DATE"
+          git add .
+          git commit -m "今日真实新闻已送达"
           git push
