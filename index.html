@@ -3,119 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>宠物专家组 | 数字化情报中心</title>
+    <title>宠物专家动态中心</title>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --bg-color: #f4f7f6;
-        }
-        body {
-            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .container {
-            max-width: 900px;
-            margin: -30px auto 40px;
-            padding: 0 20px;
-        }
-        /* 高清封面图区域 */
-        .featured-image {
-            width: 100%;
-            height: 300px;
-            border-radius: 15px;
-            object-fit: cover;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-            background-color: #ddd;
-            margin-bottom: 30px;
-        }
-        .news-section {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        h2 {
-            color: var(--primary-color);
-            border-left: 5px solid var(--accent-color);
-            padding-left: 15px;
-            margin-bottom: 25px;
-        }
-        .news-item {
-            border-bottom: 1px dashed #eee;
-            padding: 20px 0;
-            transition: all 0.3s;
-        }
+        body { font-family: sans-serif; background: #f0f2f5; padding: 20px; line-height: 1.6; }
+        .card { background: white; border-radius: 12px; padding: 20px; max-width: 600px; margin: auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #1a73e8; font-size: 1.5rem; text-align: center; }
+        .news-item { border-bottom: 1px solid #eee; padding: 15px 0; }
         .news-item:last-child { border: none; }
-        .news-item:hover { background-color: #fafafa; }
-        
-        .news-tag {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            background: #e1f5fe;
-            color: #0288d1;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-        .news-content {
-            font-size: 1.05rem;
-            color: #444;
-            margin: 0;
-            text-align: justify;
-        }
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #888;
-            font-size: 0.9rem;
-        }
+        .tag { background: #e8f0fe; color: #1967d2; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
+        .time { font-size: 0.8rem; color: #999; float: right; }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>宠物专家组数字化情报站</h1>
-    <p>实时同步全球宠物医疗与营养科研前沿</p>
-</header>
-
-<div class="container">
-    <img src="https://source.unsplash.com/featured/?pet,lab,1775001461" alt="科研封面" class="featured-image">
-
-    <div class="news-section">
-        <h2>今日科研动态发布</h2>
-        
+    <div class="card">
+        <h1>宠物科研实时情报站</h1>
         <div class="news-item">
-            <span class="news-tag">消化健康</span>
-            <p class="news-content">【消化】2026-03-31 国际宠粮峰会发布肠道微生态调节新标准，旨在通过益生元组合提升中老年犬猫吸收率。
+            <span class="tag">动态 1</span>
+            <p id="news1">【待抓取】机器人正在联网获取真实资讯...</p>
         </div>
-
         <div class="news-item">
-            <span class="news-tag">皮毛营养</span>
-            <p class="news-content">【毛发】2026-03-31 宠物营养学会最新研究表明，高浓度Ω-3脂肪酸在改善博美等品种皮肤干燥方面有显著疗效。
+            <span class="tag">动态 2</span>
+            <p id="news2">【待抓取】正在筛选行业前沿数据...</p>
         </div>
-
         <div class="news-item">
-            <span class="news-tag">免疫防御</span>
-            <p class="news-content">【免疫】2026-03-31 新型宠物疫苗辅助佐剂进入临床阶段，有望将幼宠初免成功率提升15%以上。
+            <span class="tag">动态 3</span>
+            <p id="news3">【待抓取】同步国际兽医协会最新报告...</p>
         </div>
+        <p style="text-align:center; color:#bbb; font-size:0.7rem;">自动更新系统由 GitHub Actions 驱动</p>
     </div>
-</div>
-
-<footer>
-    <p>© 2026 宠物专家项目组 · 数字化中心自动化分发系统</p>
-</footer>
-
 </body>
 </html>
